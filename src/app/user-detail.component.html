@@ -1,0 +1,100 @@
+<div *ngIf="user" class="container">
+	<div class="row">
+		<div class="card-panel teal white-text" style="text-align: center;">
+			Details of {{user.login}}
+		</div>
+		<div class="col s12 no-padding" style="border : 1px solid teal;">
+			<div class="col s12">
+        <div class="col s3">
+          Name : 
+        </div>
+        <div class="col s9">
+          {{user.login}}
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="col s3">
+          Type : 
+        </div>
+        <div class="col s9">
+          {{user.type}}
+        </div>
+      </div><div class="col s12">
+        <div class="col s3">
+          Score : 
+        </div>
+        <div class="col s9">
+          {{user.score}}
+        </div>
+      </div><div class="col s12">
+        <div class="col s3">
+          Git Link : 
+        </div>
+        <div class="col s9">
+          <a [href]="user.preambleHtml" target="_blank">This is a git link</a>
+        </div>
+      </div><div class="col s12">
+        <div class="col s3">
+          Followers : 
+        </div>
+        <div class="col s9">
+          <ul class="collection">
+              <li class="collection-item avatar" *ngFor="let follower of userFollowers ">
+                <div class="col s12">
+                  <img [src]="follower.avatar_url" class="circle responsive-img">
+                    <span class="title black-text">{{follower.login}}</span>
+                  </div>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="col s3">
+          Subscriptions : 
+        </div>
+        <div class="col s9">
+          <ul class="collection">
+              <li class="collection-item" *ngFor="let sub of subscriptionList ">
+                    <span class="title black-text">{{sub.name}}</span>
+              </li>
+          </ul>
+        </div>
+      </div><div class="col s12">
+        <div class="col s3">
+          Organization : 
+        </div>
+        <div class="col s9">
+          <ul class="collection">
+              <li class="collection-item" *ngFor="let org of organizationList ">
+                    <span class="title black-text">{{org.login}}</span>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="col s3">
+          Repository : 
+        </div>
+        <div class="col s9">
+          <ul class="collection">
+              <li class="collection-item" *ngFor="let repo of repositoryList ">
+                    <span class="title black-text">{{repo.name}}</span>
+              </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col s12">
+        <div class="col s3">
+          Events : 
+        </div>
+        <div class="col s9">
+          <ul class="collection">
+              <li class="collection-item" *ngFor="let event of eventList ">
+                    <span class="title black-text">{{event.type}}</span>
+              </li>
+          </ul>
+        </div>
+      </div>
+		</div>
+	</div>
+</div>

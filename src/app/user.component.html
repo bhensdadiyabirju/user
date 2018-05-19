@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		<div class="card-panel teal white-text" style="text-align: center;">
+			Search For User
+		</div>
+		<div class="card">
+			<ul class="collection">
+            	<li class="collection-item">
+            		<input [(ngModel)]="userSearch" placeholder="Search On Section Name" style="margin-bottom: 0px;">
+            	</li>
+                <li class="collection-item avatar" *ngFor="let user of userList | filter : userSearch ; " (click)="onUserClick(user)">
+               		<div class="col s12 cursor-pointer">
+               			<img [src]="user.avatar_url" class="circle responsive-img">
+               		    <span class="title black-text">{{user.login}}</span>
+                    </div>
+                </li>
+            </ul>
+		</div>
+	</div>
+</div>
